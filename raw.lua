@@ -192,25 +192,29 @@ end)
 RunService.RenderStepped:Connect(function()
 	local Humanoid = Player.Character:FindFirstChild('Humanoid')
 	if Humanoid then
-		local X, Z = 0, 0
+		UserInputService.InputBegan:Connect(function(_, GameProcessed)
+			if not GameProcessed then
+				local X, Z = 0, 0
 
-		if UserInputService:IsKeyDown(Enum.KeyCode.W) then
-			Z += -1
-		end
+				if UserInputService:IsKeyDown(Enum.KeyCode.W) then
+					Z += -1
+				end
 
-		if UserInputService:IsKeyDown(Enum.KeyCode.A) then
-			X += -1
-		end
+				if UserInputService:IsKeyDown(Enum.KeyCode.A) then
+					X += -1
+				end
 
-		if UserInputService:IsKeyDown(Enum.KeyCode.S) then
-			Z += 1
-		end
+				if UserInputService:IsKeyDown(Enum.KeyCode.S) then
+					Z += 1
+				end
 
-		if UserInputService:IsKeyDown(Enum.KeyCode.D) then
-			X += 1
-		end
+				if UserInputService:IsKeyDown(Enum.KeyCode.D) then
+					X += 1
+				end
 
-		Humanoid:Move(Vector3.new(X, 0, Z), true)
+				Humanoid:Move(Vector3.new(X, 0, Z), true)		
+			end
+		end)
 	end
 
 	if AutoBuyEnabled then
