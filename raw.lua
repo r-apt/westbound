@@ -17,7 +17,8 @@ local Menu = UILibrary.AddMenu()
 UILibrary.AddButton(Menu[1], 'Gun Mods', 'Disabled')
 UILibrary.AddButton(Menu[1], 'Auto Buy/ Sell', 'Disabled')
 UILibrary.AddButton(Menu[1], 'Auto Heal', 'Disabled')
-UILibrary.AddButton(Menu[1], 'Launch ESP/ Admin', 'Launch')
+UILibrary.AddButton(Menu[1], 'Launch ESP', 'Launch')
+UILibrary.AddButton(Menu[1], 'Enable Autofarm', 'Enable')
 UILibrary.AddButton(Menu[1], 'Break Window', 'Break')
 UILibrary.AddButton(Menu[1], 'Shop Boxes', 'Disabled')
 local Buttons = {}
@@ -90,14 +91,18 @@ Buttons['Auto Heal'].MouseButton1Click:Connect(function()
 	end			
 end)
 
-Buttons['Launch ESP/ Admin'].MouseButton1Click:Connect(function()
+Buttons['Launch ESP'].MouseButton1Click:Connect(function()
 	if not AddonsLaunched then
 		AddonsLaunched = true
 		loadstring(game:HttpGet('https://raw.githubusercontent.com/ic3w0lf22/Unnamed-ESP/master/UnnamedESP.lua'))()
-		loadstring(game:HttpGet('http://impulse-hub.xyz/ImpulseIY',true))()
 
-		Buttons['Launch ESP/ Admin'].TextLabel.Text = 'Launched'
+		Buttons['Launch ESP'].TextLabel.Text = 'Launched'
+		Buttons['Launch ESP'].AutoButtonColor = false
 	end
+end)
+
+Buttons['Enable Autofarm'].MouseButton1Click:Connect(function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/Mapple7777/WestboundAutofarm/main/WestboundAutofarmV2.lua'))()
 end)
 
 Buttons['Break Window'].MouseButton1Click:Connect(function()
