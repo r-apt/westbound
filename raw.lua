@@ -12,7 +12,7 @@ local BoxesEnabled = false
 local CurrentShop = ''
 
 -- Create UI Elements
-local UILibrary = loadstring(game:HttpGet('https://raw.githubusercontent.com/neo-wolves/westbound/main/library.lua',true))()
+local UILibrary = loadstring(game:HttpGet('https://raw.githubusercontent.com/r-apt/westbound/main/library.lua',true))()
 local Menu = UILibrary.AddMenu()
 UILibrary.AddButton(Menu[1], 'Gun Mods', 'Disabled')
 UILibrary.AddButton(Menu[1], 'Auto Buy/ Sell', 'Disabled')
