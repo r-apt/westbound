@@ -23,6 +23,8 @@ local function GetWindowTableObject(Window)
 end
 
 Module.AddDraggableWindow = function(Window)
+	print(Window)
+	
 	table.insert(DraggableWindows, {
 		Object = Window,
 		MouseInWindow = false,
