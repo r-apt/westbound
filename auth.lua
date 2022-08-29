@@ -14,6 +14,7 @@ local authorisedUsers = {
   3826267444,
   1633214428,
   3787881734,
+  2798374343,
 }
 
 return authorisedUsers
